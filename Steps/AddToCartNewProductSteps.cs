@@ -13,7 +13,7 @@ namespace WOOCOMMERCE_SPECFLOW.Steps
         static ProductPage productPage;
         static CartPage cartPage;
         static ProductProvider product = new ProductProvider();
-        static string id;
+        static string id=null;
 
         [BeforeScenario]
         public static void TestInitialize()
@@ -25,7 +25,11 @@ namespace WOOCOMMERCE_SPECFLOW.Steps
         [AfterScenario]
         public static void DeleteProduct()
         {
-            Assert.IsTrue(product.DeleteProduct(id));           
+            if (id != null)
+            {
+                Assert.IsTrue(product.DeleteProduct(id));
+                id = null;
+            }                     
         }
 
         [Given]

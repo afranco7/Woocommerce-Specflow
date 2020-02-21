@@ -17,6 +17,11 @@ namespace WOOCOMMERCE_SPECFLOW.Pages
         private readonly By searchInputBy = By.Id("woocommerce-product-search-field-0");
         public IWebElement SearchInput => driver.FindElement(searchInputBy);
 
+        public void GoToPage()
+        {           
+            Actions.GoToPage(driver, baseUrl);            
+        }
+
         public bool IsSearchInputPresent()
         {
             return Actions.VerifyElementDisplayed(driver, searchInputBy);
@@ -33,12 +38,9 @@ namespace WOOCOMMERCE_SPECFLOW.Pages
             return SearchInput.Text;
         }
 
-        public void SearchHoodie()
-        {
-            if (!string.IsNullOrEmpty(GetTextOfSearchInput()))
-            {
-                SearchInput.SendKeys(Keys.Enter);
-            }
+        public void PressEnterAndSearchHoodie()
+        {            
+            SearchInput.SendKeys(Keys.Enter);            
         }
     }
 }

@@ -137,10 +137,12 @@
     <Compile Include="DriverSetup\DriverProvider.cs" />
     <Compile Include="Pages\CartPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\ProductHoodiesPage.cs" />
     <Compile Include="Pages\ProductPage.cs" />
     <Compile Include="Steps\AddToCartNewProductSteps.cs" />
     <Compile Include="Steps\BaseSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\SearchHoodieProductsAndDetailsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

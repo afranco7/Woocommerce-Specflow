@@ -76,5 +76,10 @@ namespace WOOCOMMERCE_SPECFLOW.BrowserActions
                 throw new TimeoutException("after a " + timeToWait + " second wait, was not possible to type the text: " + text + " in the element");
             }
         }
+
+        public static void ClearCache(IWebDriver driver)
+        {
+            driver.Manage().Cookies.DeleteAllCookies();
+        }
     }
 }
